@@ -1,0 +1,14 @@
+targets:
+  $default:
+    builders:
+      fast_i18n:
+        options:
+          input_directory: lib/src/input
+          input_file_pattern: .i18n.csv
+          output_directory: lib/src/generated
+          output_file_name: i18n.g.dart
+          output_format: single_file
+          namespaces: false
+          pluralization:
+            auto: off
+          translate_var: i18n
