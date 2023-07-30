@@ -8,21 +8,28 @@ environment:
   sdk: '>=3.0.6 <4.0.0'
 
 dependencies:
-  flutter:
-    sdk: flutter
-  cupertino_icons: ^1.0.2
-
-dev_dependencies:
-  flutter_test:
-    sdk: flutter
-  localizer: 
-    path: ../localizer/
   assets:
     path: ../assets/
   common_ui:
     path: ../common_ui/
+  cupertino_icons: ^1.0.2
+  equatable: ^2.0.5
+  flutter:
+    sdk: flutter
+  flutter_bloc: ^8.1.3
+  flutter_localizations:
+    sdk: flutter
+  localizer: 
+    path: ../localizer/
+  meta: ^1.9.1
+  slang: ^3.22.0
+  slang_flutter: ^3.22.0
+  very_good_analysis: ^5.0.0+1
 
+dev_dependencies:
   flutter_lints: ^2.0.0
+  flutter_test:
+    sdk: flutter
 
 flutter:
   uses-material-design: true

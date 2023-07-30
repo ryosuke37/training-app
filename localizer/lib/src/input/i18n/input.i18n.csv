@@ -1,0 +1,15 @@
+key,en,ja
+language,language,言語
+settings,settings,設定
+english,English,英語
+japanese,Japanese,日本語
+home,home,ホーム
+graph,graph,グラフ
+theme,theme,テーマ
+blueDark,dark blue,ダークブルー
+blueLight,light blue,ライトブルー
+greenDark,dark green,ダークグリーン
+greenLight,light green,ライトグリーン
+pageNumber,page $num of $pearent tab,$pearentタブ $num ページ
+nextPage,Next page,次のページ
+back,Back,戻る

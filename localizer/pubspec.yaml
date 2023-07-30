@@ -10,6 +10,8 @@ environment:
 dependencies:
   flutter:
     sdk: flutter
+  slang: ^3.22.0
+  slang_flutter: ^3.22.0
 
 dev_dependencies:
   flutter_test:
@@ -17,4 +19,3 @@ dev_dependencies:
   flutter_localizations:
     sdk: flutter
   flutter_lints: ^2.0.0
-  fast_i18n: ^5.7.0

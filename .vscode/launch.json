@@ -1,0 +1,88 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "app",
+            "cwd": "app",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "app (profile mode)",
+            "cwd": "app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "app (release mode)",
+            "cwd": "app",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "assets",
+            "cwd": "assets",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "assets (profile mode)",
+            "cwd": "assets",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "assets (release mode)",
+            "cwd": "assets",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "common_ui",
+            "cwd": "common_ui",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "common_ui (profile mode)",
+            "cwd": "common_ui",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "common_ui (release mode)",
+            "cwd": "common_ui",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        },
+        {
+            "name": "localizer",
+            "cwd": "localizer",
+            "request": "launch",
+            "type": "dart"
+        },
+        {
+            "name": "localizer (profile mode)",
+            "cwd": "localizer",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "profile"
+        },
+        {
+            "name": "localizer (release mode)",
+            "cwd": "localizer",
+            "request": "launch",
+            "type": "dart",
+            "flutterMode": "release"
+        }
+    ]
+}

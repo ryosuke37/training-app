@@ -1,14 +1,59 @@
 targets:
   $default:
     builders:
-      fast_i18n:
+      slang_build_runner:
         options:
+          # base_locale: fr
+          fallback_strategy: base_locale
           input_directory: lib/src/input
           input_file_pattern: .i18n.csv
           output_directory: lib/src/generated
-          output_file_name: i18n.g.dart
+          output_file_name: translations.g.dart
           output_format: single_file
+          # locale_handling: true
+          # flutter_integration: true
           namespaces: false
-          pluralization:
-            auto: off
-          translate_var: i18n
+          translate_var: t
+          # enum_name: AppLocale
+          # translation_class_visibility: private
+          # key_case: snake
+          # key_map_case: camel
+          # param_case: pascal
+          # string_interpolation: double_braces
+          # flat_map: false
+          # translation_overrides: false
+          # timestamp: true
+          # maps:
+          #   - error.codes
+          #   - category
+          #   - iconNames
+          # pluralization:
+          #   auto: cardinal
+          #   default_parameter: n
+          #   cardinal:
+          #     - someKey.apple
+          #   ordinal:
+          #     - someKey.place
+          # contexts:
+          #   gender_context:
+          #     enum:
+          #       - male
+          #       - female
+          #     paths:
+          #       - my.path.to.greet
+          #     default_parameter: gender
+          #     generate_enum: true
+          # interfaces:
+          #   PageData: onboarding.pages.*
+          #   PageData2:
+          #     paths:
+          #       - my.path
+          #       - cool.pages.*
+          #     attributes:
+          #       - String title
+          #       - String? content
+          # obfuscation:
+          #   enabled: false
+          #   secret: somekey
+          # imports:
+          #   - 'package:my_package/path_to_enum.dart'
