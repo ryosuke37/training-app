@@ -8,22 +8,24 @@ class GraphPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
-        middle: Text(t.pageNumber(num: '2', pearent: t.graph)),
+        middle: Text(S.of(context).pageNumber(num: '2', pearent: t.graph)),
       ),
       child: Center(
         child: CupertinoButton(
-          child: Text(t.nextPage),
+          child: Text(S.of(context).nextPage),
           onPressed: () {
             Navigator.of(context).push(
               CupertinoPageRoute<void>(
                 builder: (BuildContext context) {
                   return CupertinoPageScaffold(
                     navigationBar: CupertinoNavigationBar(
-                      middle: Text(t.pageNumber(num: '2', pearent: t.graph)),
+                      middle: Text(
+                        S.of(context).pageNumber(num: '2', pearent: t.graph),
+                      ),
                     ),
                     child: Center(
                       child: CupertinoButton(
-                        child: Text(t.back),
+                        child: Text(S.of(context).back),
                         onPressed: () {
                           Navigator.of(context).pop();
                         },

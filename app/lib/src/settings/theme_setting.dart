@@ -11,7 +11,7 @@ class ThemeSettingTile extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CupertinoListTile.notched(
-      title: Text(t.theme),
+      title: Text(S.of(context).theme),
       leading: const RoundedRectIcon(CupertinoIcons.paintbrush),
       trailing: const CupertinoListTileChevron(),
       onTap: () => Navigator.of(context).push(
@@ -43,7 +43,7 @@ class _ThemeSettingPage extends StatelessWidget {
           (element) {
             final isSelected = element == themeBloc.state.appTheme;
             return CupertinoListTile.notched(
-              title: Text(element.toDisplayString),
+              title: Text(element.toDisplayString(context)),
               leading: _ThemeIcon(element),
               trailing: isSelected
                   ? Icon(
@@ -95,16 +95,16 @@ class _ThemeIcon extends StatelessWidget {
 }
 
 extension on AppTheme {
-  String get toDisplayString {
+  String toDisplayString(BuildContext context) {
     switch (this) {
       case AppTheme.blueDark:
-        return t.blueDark;
+        return S.of(context).blueDark;
       case AppTheme.blueLight:
-        return t.blueLight;
+        return S.of(context).blueLight;
       case AppTheme.greenDark:
-        return t.greenDark;
+        return S.of(context).greenDark;
       case AppTheme.greenLight:
-        return t.greenLight;
+        return S.of(context).greenLight;
     }
   }
 }

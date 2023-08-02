@@ -11,7 +11,7 @@ class SettingsPage extends StatelessWidget {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         backgroundColor: CupertinoTheme.of(context).barBackgroundColor,
-        middle: Text(t.settings),
+        middle: Text(S.of(context).settings),
       ),
       child: const Center(
         child: Settings(),
@@ -27,7 +27,7 @@ class Settings extends StatelessWidget {
   Widget build(BuildContext context) {
     return CupertinoListSection.insetGrouped(
       backgroundColor: CupertinoTheme.of(context).scaffoldBackgroundColor,
-      header: Text(t.settings),
+      header: Text(S.of(context).settings),
       children: const [
         LanguageSettingTile(),
         ThemeSettingTile(),
