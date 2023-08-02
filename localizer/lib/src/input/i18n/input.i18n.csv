@@ -13,3 +13,12 @@ greenLight,light green,ライトグリーン
 pageNumber,page $num of $pearent tab,$pearentタブ $num ページ
 nextPage,Next page,次のページ
 back,Back,戻る
+timer,timer,タイマー
+start,Start,開始
+stop,Stop,停止
+cancel,Cancel,キャンセル
+hours,h,時
+minuts,min,分
+seconds,s,秒
+interval,Interval,インターバル
+workOut,Work out,ワークアウト

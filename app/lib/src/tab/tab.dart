@@ -5,6 +5,7 @@ import 'package:localizer/localizer.dart';
 enum MyTab {
   home,
   graph,
+  timer,
   settings,
 }
 
@@ -21,6 +22,11 @@ extension MyTabEx on MyTab {
           icon: const Icon(CupertinoIcons.graph_square),
           label: S.of(context).graph,
         );
+      case (MyTab.timer):
+        return BottomNavigationBarItem(
+          icon: const Icon(CupertinoIcons.timer),
+          label: t.timer,
+        );
       case (MyTab.settings):
         return BottomNavigationBarItem(
           icon: const Icon(CupertinoIcons.gear),
@@ -35,6 +41,8 @@ extension MyTabEx on MyTab {
         return const HomePage();
       case MyTab.graph:
         return const GraphPage();
+      case MyTab.timer:
+        return const TimerPage();
       case MyTab.settings:
         return const SettingsPage();
     }

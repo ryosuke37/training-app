@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 28 (14 per locale)
+/// Strings: 42 (21 per locale)
 ///
-/// Built on 2023-07-30 at 07:44 UTC
+/// Built on 2023-07-30 at 09:47 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -164,6 +164,13 @@ class _TranslationsEn implements BaseTranslations<AppLocale, _TranslationsEn> {
 	String pageNumber({required Object num, required Object pearent}) => 'page ${num} of ${pearent} tab';
 	String get nextPage => 'Next page';
 	String get back => 'Back';
+	String get timer => 'timer';
+	String get start => 'Start';
+	String get stop => 'Stop';
+	String get cancel => 'Cancel';
+	String get hours => 'h';
+	String get minuts => 'min';
+	String get seconds => 's';
 }
 
 // Path: <root>
@@ -207,6 +214,13 @@ class _TranslationsJa extends _TranslationsEn {
 	@override String pageNumber({required Object pearent, required Object num}) => '${pearent}タブ ${num} ページ';
 	@override String get nextPage => '次のページ';
 	@override String get back => '戻る';
+	@override String get timer => 'タイマー';
+	@override String get start => '開始';
+	@override String get stop => '停止';
+	@override String get cancel => 'キャンセル';
+	@override String get hours => '時';
+	@override String get minuts => '分';
+	@override String get seconds => '秒';
 }
 
 /// Flat map(s) containing all translations.
@@ -229,6 +243,13 @@ extension on _TranslationsEn {
 			case 'pageNumber': return ({required Object num, required Object pearent}) => 'page ${num} of ${pearent} tab';
 			case 'nextPage': return 'Next page';
 			case 'back': return 'Back';
+			case 'timer': return 'timer';
+			case 'start': return 'Start';
+			case 'stop': return 'Stop';
+			case 'cancel': return 'Cancel';
+			case 'hours': return 'h';
+			case 'minuts': return 'min';
+			case 'seconds': return 's';
 			default: return null;
 		}
 	}
@@ -251,6 +272,13 @@ extension on _TranslationsJa {
 			case 'pageNumber': return ({required Object pearent, required Object num}) => '${pearent}タブ ${num} ページ';
 			case 'nextPage': return '次のページ';
 			case 'back': return '戻る';
+			case 'timer': return 'タイマー';
+			case 'start': return '開始';
+			case 'stop': return '停止';
+			case 'cancel': return 'キャンセル';
+			case 'hours': return '時';
+			case 'minuts': return '分';
+			case 'seconds': return '秒';
 			default: return null;
 		}
 	}
