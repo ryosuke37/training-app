@@ -1,3 +1,4 @@
+import 'package:app/src/pages/pages.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:localizer/localizer.dart';
 
@@ -8,23 +9,34 @@ enum MyTab {
 }
 
 extension MyTabEx on MyTab {
-  BottomNavigationBarItem get bottomNavigationBarItem {
+  BottomNavigationBarItem bottomNavigationBarItem(BuildContext context) {
     switch (this) {
       case (MyTab.home):
         return BottomNavigationBarItem(
           icon: const Icon(CupertinoIcons.home),
-          label: t.home,
+          label: S.of(context).home,
         );
       case (MyTab.graph):
         return BottomNavigationBarItem(
           icon: const Icon(CupertinoIcons.graph_square),
-          label: t.graph,
+          label: S.of(context).graph,
         );
       case (MyTab.settings):
         return BottomNavigationBarItem(
           icon: const Icon(CupertinoIcons.gear),
-          label: t.settings,
+          label: S.of(context).settings,
         );
+    }
+  }
+
+  Widget get toPage {
+    switch (this) {
+      case MyTab.home:
+        return const HomePage();
+      case MyTab.graph:
+        return const GraphPage();
+      case MyTab.settings:
+        return const SettingsPage();
     }
   }
 }

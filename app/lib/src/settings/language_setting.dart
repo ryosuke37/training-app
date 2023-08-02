@@ -30,7 +30,7 @@ class _LanguageSettingPage extends StatelessWidget {
     return CupertinoPageScaffold(
       navigationBar: CupertinoNavigationBar(
         backgroundColor: CupertinoTheme.of(context).barBackgroundColor,
-        middle: Text(t.language),
+        middle: Text(S.of(context).language),
       ),
       child: CupertinoListSection.insetGrouped(
         dividerMargin: 0,
@@ -39,7 +39,7 @@ class _LanguageSettingPage extends StatelessWidget {
         children: AppLocale.values
             .map(
               (element) => CupertinoListTile.notched(
-                title: Text(element.toDisplayString),
+                title: Text(element.toDisplayString(context)),
                 trailing: element == LocaleSettings.currentLocale
                     ? Icon(
                         CupertinoIcons.check_mark,
@@ -56,12 +56,12 @@ class _LanguageSettingPage extends StatelessWidget {
 }
 
 extension on AppLocale {
-  String get toDisplayString {
+  String toDisplayString(BuildContext context) {
     switch (this) {
       case AppLocale.en:
-        return t.english;
+        return S.of(context).english;
       case AppLocale.ja:
-        return t.japanese;
+        return S.of(context).japanese;
     }
   }
 }
