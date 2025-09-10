@@ -1,11 +1,10 @@
 part of './theme_bloc.dart';
 
 class ThemeState {
-  ThemeState(this.appTheme)
-      : cupertinoThemeData = appTheme.toCupertinoThemeData;
+  ThemeState(this.appTheme) : themeData = appTheme.toThemeData;
   ThemeState.initial()
       : appTheme = AppTheme.blueLight,
-        cupertinoThemeData = AppTheme.blueLight.toCupertinoThemeData;
-  final CupertinoThemeData cupertinoThemeData;
+        themeData = AppTheme.blueLight.toThemeData;
+  final ThemeData themeData;
   final AppTheme appTheme;
 }

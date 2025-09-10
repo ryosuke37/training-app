@@ -1,6 +1,7 @@
 import 'package:app/src/settings/language_setting.dart';
 import 'package:app/src/settings/theme_setting.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:common_component/common_component.dart';
+import 'package:flutter/material.dart';
 import 'package:localizer/localizer.dart';
 
 class SettingsPage extends StatelessWidget {
@@ -8,14 +9,15 @@ class SettingsPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        backgroundColor: CupertinoTheme.of(context).barBackgroundColor,
-        middle: Text(S.of(context).settings),
+    return Scaffold(
+      appBar: AppBar(
+        leading: const Icon(Icons.settings),
+        title: Text(S.of(context).settings),
       ),
-      child: const Center(
+      body: const Center(
         child: Settings(),
       ),
+      backgroundColor: Theme.of(context).scaffoldBackgroundColor,
     );
   }
 }
@@ -25,12 +27,14 @@ class Settings extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoListSection.insetGrouped(
-      backgroundColor: CupertinoTheme.of(context).scaffoldBackgroundColor,
-      header: Text(S.of(context).settings),
+    return ListView(
       children: const [
-        LanguageSettingTile(),
-        ThemeSettingTile(),
+        ListSection(
+          children: [
+            LanguageSettingTile(),
+            ThemeSettingTile(),
+          ],
+        ),
       ],
     );
   }
