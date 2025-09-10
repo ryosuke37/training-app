@@ -9,7 +9,7 @@ set(BINARY_NAME "app")
 # https://wiki.gnome.org/HowDoI/ChooseApplicationID
 set(APPLICATION_ID "com.example.app")
 
-# Explicitly opt in to modern CMake behaviors to avoid warnings with recent
+# Explicitly opt in to modern CMake actions to avoid warnings with recent
 # versions of CMake.
 cmake_policy(SET CMP0063 NEW)
 

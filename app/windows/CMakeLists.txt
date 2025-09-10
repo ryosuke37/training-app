@@ -6,7 +6,7 @@ project(app LANGUAGES CXX)
 # the on-disk name of your application.
 set(BINARY_NAME "app")
 
-# Explicitly opt in to modern CMake behaviors to avoid warnings with recent
+# Explicitly opt in to modern CMake actions to avoid warnings with recent
 # versions of CMake.
 cmake_policy(SET CMP0063 NEW)
 

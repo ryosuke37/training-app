@@ -4,9 +4,9 @@
 /// To regenerate, run: `dart run slang`
 ///
 /// Locales: 2
-/// Strings: 28 (14 per locale)
+/// Strings: 56 (28 per locale)
 ///
-/// Built on 2023-07-30 at 07:44 UTC
+/// Built on 2024-02-23 at 01:40 UTC
 
 // coverage:ignore-file
 // ignore_for_file: type=lint
@@ -161,9 +161,23 @@ class _TranslationsEn implements BaseTranslations<AppLocale, _TranslationsEn> {
 	String get blueLight => 'light blue';
 	String get greenDark => 'dark green';
 	String get greenLight => 'light green';
-	String pageNumber({required Object num, required Object pearent}) => 'page ${num} of ${pearent} tab';
+	String pageNumber({required Object num, required Object parent}) => 'page ${num} of ${parent} tab';
 	String get nextPage => 'Next page';
 	String get back => 'Back';
+	String get timer => 'timer';
+	String get start => 'Start';
+	String get stop => 'Stop';
+	String get cancel => 'Cancel';
+	String get hours => 'hours';
+	String get minutes => 'min';
+	String get seconds => 'sec';
+	String get ready => 'Ready';
+	String get workOut => 'Work out';
+	String get routineList => 'Routine List';
+	String get routineName => 'routine name';
+	String get description => 'description';
+	String get action => 'action';
+	String get repeatNum => 'repeat';
 }
 
 // Path: <root>
@@ -204,9 +218,23 @@ class _TranslationsJa extends _TranslationsEn {
 	@override String get blueLight => 'ライトブルー';
 	@override String get greenDark => 'ダークグリーン';
 	@override String get greenLight => 'ライトグリーン';
-	@override String pageNumber({required Object pearent, required Object num}) => '${pearent}タブ ${num} ページ';
+	@override String pageNumber({required Object parent, required Object num}) => '${parent}タブ ${num} ページ';
 	@override String get nextPage => '次のページ';
 	@override String get back => '戻る';
+	@override String get timer => 'タイマー';
+	@override String get start => '開始';
+	@override String get stop => '停止';
+	@override String get cancel => 'キャンセル';
+	@override String get hours => '時間';
+	@override String get minutes => '分';
+	@override String get seconds => '秒';
+	@override String get ready => '準備';
+	@override String get workOut => 'ワークアウト';
+	@override String get routineList => 'ルーティーンリスト';
+	@override String get routineName => 'ルーティーン名';
+	@override String get description => '概要';
+	@override String get action => '行動';
+	@override String get repeatNum => '繰り返し回数';
 }
 
 /// Flat map(s) containing all translations.
@@ -226,9 +254,23 @@ extension on _TranslationsEn {
 			case 'blueLight': return 'light blue';
 			case 'greenDark': return 'dark green';
 			case 'greenLight': return 'light green';
-			case 'pageNumber': return ({required Object num, required Object pearent}) => 'page ${num} of ${pearent} tab';
+			case 'pageNumber': return ({required Object num, required Object parent}) => 'page ${num} of ${parent} tab';
 			case 'nextPage': return 'Next page';
 			case 'back': return 'Back';
+			case 'timer': return 'timer';
+			case 'start': return 'Start';
+			case 'stop': return 'Stop';
+			case 'cancel': return 'Cancel';
+			case 'hours': return 'hours';
+			case 'minutes': return 'min';
+			case 'seconds': return 'sec';
+			case 'ready': return 'Ready';
+			case 'workOut': return 'Work out';
+			case 'routineList': return 'Routine List';
+			case 'routineName': return 'routine name';
+			case 'description': return 'description';
+			case 'action': return 'action';
+			case 'repeatNum': return 'repeat';
 			default: return null;
 		}
 	}
@@ -248,9 +290,23 @@ extension on _TranslationsJa {
 			case 'blueLight': return 'ライトブルー';
 			case 'greenDark': return 'ダークグリーン';
 			case 'greenLight': return 'ライトグリーン';
-			case 'pageNumber': return ({required Object pearent, required Object num}) => '${pearent}タブ ${num} ページ';
+			case 'pageNumber': return ({required Object parent, required Object num}) => '${parent}タブ ${num} ページ';
 			case 'nextPage': return '次のページ';
 			case 'back': return '戻る';
+			case 'timer': return 'タイマー';
+			case 'start': return '開始';
+			case 'stop': return '停止';
+			case 'cancel': return 'キャンセル';
+			case 'hours': return '時間';
+			case 'minutes': return '分';
+			case 'seconds': return '秒';
+			case 'ready': return '準備';
+			case 'workOut': return 'ワークアウト';
+			case 'routineList': return 'ルーティーンリスト';
+			case 'routineName': return 'ルーティーン名';
+			case 'description': return '概要';
+			case 'action': return '行動';
+			case 'repeatNum': return '繰り返し回数';
 			default: return null;
 		}
 	}

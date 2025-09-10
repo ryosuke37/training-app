@@ -1,5 +1,5 @@
-import 'package:common_ui/common_ui.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:common_component/common_component.dart';
+import 'package:flutter/material.dart';
 import 'package:localizer/localizer.dart';
 
 class LanguageSettingTile extends StatelessWidget {
@@ -7,12 +7,12 @@ class LanguageSettingTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoListTile.notched(
-      title: Text(t.language),
-      leading: const RoundedRectIcon(CupertinoIcons.globe),
-      trailing: const CupertinoListTileChevron(),
+    return ListTile(
+      title: Text(S.of(context).language),
+      leading: const Icon(Icons.abc),
+      trailing: const ListTileArrow(),
       onTap: () => Navigator.of(context).push(
-        CupertinoPageRoute<void>(
+        MaterialPageRoute<void>(
           builder: (BuildContext context) {
             return const _LanguageSettingPage();
           },
@@ -27,29 +27,30 @@ class _LanguageSettingPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        backgroundColor: CupertinoTheme.of(context).barBackgroundColor,
-        middle: Text(S.of(context).language),
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: Theme.of(context).appBarTheme.backgroundColor,
+        title: Text(S.of(context).language),
       ),
-      child: CupertinoListSection.insetGrouped(
-        dividerMargin: 0,
-        additionalDividerMargin: 0,
-        backgroundColor: CupertinoTheme.of(context).scaffoldBackgroundColor,
-        children: AppLocale.values
-            .map(
-              (element) => CupertinoListTile.notched(
-                title: Text(element.toDisplayString(context)),
-                trailing: element == LocaleSettings.currentLocale
-                    ? Icon(
-                        CupertinoIcons.check_mark,
-                        color: CupertinoTheme.of(context).primaryColor,
-                      )
-                    : const SizedBox.shrink(),
-                onTap: () => LocaleSettings.setLocale(element),
-              ),
-            )
-            .toList(),
+      body: ListView(
+        children: [
+          ListSection(
+            children: AppLocale.values
+                .map(
+                  (element) => ListTile(
+                    title: Text(element.toDisplayString(context)),
+                    trailing: element == LocaleSettings.currentLocale
+                        ? Icon(
+                            Icons.check_rounded,
+                            color: Theme.of(context).primaryColor,
+                          )
+                        : const SizedBox.shrink(),
+                    onTap: () => LocaleSettings.setLocale(element),
+                  ),
+                )
+                .toList(),
+          ),
+        ],
       ),
     );
   }

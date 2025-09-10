@@ -1,7 +1,7 @@
 import 'package:app/src/base/theme/theme_bloc.dart';
 import 'package:assets/assets.dart';
-import 'package:common_ui/common_ui.dart';
-import 'package:flutter/cupertino.dart';
+import 'package:common_component/common_component.dart';
+import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:localizer/localizer.dart';
 
@@ -10,12 +10,12 @@ class ThemeSettingTile extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return CupertinoListTile.notched(
+    return ListTile(
       title: Text(S.of(context).theme),
-      leading: const RoundedRectIcon(CupertinoIcons.paintbrush),
-      trailing: const CupertinoListTileChevron(),
+      leading: const Icon(Icons.brush),
+      trailing: const ListTileArrow(),
       onTap: () => Navigator.of(context).push(
-        CupertinoPageRoute<void>(
+        MaterialPageRoute<void>(
           builder: (BuildContext context) {
             return const _ThemeSettingPage();
           },
@@ -31,23 +31,22 @@ class _ThemeSettingPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final themeBloc = context.read<ThemeBloc>();
-    final theme = CupertinoTheme.of(context);
-    return CupertinoPageScaffold(
-      navigationBar: CupertinoNavigationBar(
-        backgroundColor: theme.barBackgroundColor,
-        middle: Text(t.theme),
+    final theme = Theme.of(context);
+    return Scaffold(
+      appBar: AppBar(
+        backgroundColor: theme.appBarTheme.backgroundColor,
+        title: Text(t.theme),
       ),
-      child: CupertinoListSection.insetGrouped(
-        backgroundColor: CupertinoTheme.of(context).scaffoldBackgroundColor,
+      body: ListSection(
         children: AppTheme.values.map(
           (element) {
             final isSelected = element == themeBloc.state.appTheme;
-            return CupertinoListTile.notched(
+            return ListTile(
               title: Text(element.toDisplayString(context)),
               leading: _ThemeIcon(element),
               trailing: isSelected
                   ? Icon(
-                      CupertinoIcons.check_mark,
+                      Icons.check_rounded,
                       color: theme.primaryColor,
                     )
                   : const SizedBox.shrink(),
@@ -61,9 +60,10 @@ class _ThemeSettingPage extends StatelessWidget {
 }
 
 class _ThemeIcon extends StatelessWidget {
-  _ThemeIcon(AppTheme appTheme) : theme = appTheme.toCupertinoThemeData;
+  _ThemeIcon(AppTheme appTheme) : theme = appTheme.toThemeData;
 
-  final CupertinoThemeData theme;
+  final ThemeData theme;
+  final double size = 30;
   final double border = 1;
   final double radius = 10;
 
@@ -73,17 +73,23 @@ class _ThemeIcon extends StatelessWidget {
       borderRadius: BorderRadius.all(Radius.circular(radius)),
       child: Container(
         padding: EdgeInsets.all(border),
-        color: theme.primaryColor,
+        color: theme.colorScheme.primary,
+        width: size,
+        height: size,
         child: ClipRRect(
           borderRadius: BorderRadius.all(Radius.circular(radius - border)),
           child: SizedBox.expand(
             child: Row(
               children: [
                 Expanded(
-                  child: Container(color: theme.primaryColor),
+                  child: Container(
+                    color: theme.colorScheme.primary,
+                  ),
                 ),
                 Expanded(
-                  child: Container(color: theme.barBackgroundColor),
+                  child: Container(
+                    color: theme.colorScheme.surface,
+                  ),
                 ),
               ],
             ),

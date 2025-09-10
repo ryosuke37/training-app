@@ -1,4 +1,3 @@
-import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 enum AppTheme {
@@ -21,60 +20,53 @@ extension on Brightness {
   Color get scaffoldBackgroundColor {
     switch (this) {
       case Brightness.light:
-        return const Color.fromARGB(255, 243, 243, 243);
+        return const Color.fromARGB(255, 240, 240, 240);
       case Brightness.dark:
         return const Color.fromARGB(255, 20, 20, 20);
     }
   }
 }
 
-// extension CupertinoColorsEx on CupertinoColors {
-//   static const CupertinoDynamicColor iconBackGround =
-//       CupertinoDynamicColor.withBrightness(
-//     debugLabel: 'iconBackGround',
-//     color: Color(0xFF999999),
-//     darkColor: Color(0xFF757575),
-//   );
-
-//   static const CupertinoDynamicColor icon =
-//       CupertinoDynamicColor.withBrightness(
-//     debugLabel: 'icon',
-//     color: Color.fromARGB(255, 35, 35, 35),
-//     darkColor: Color.fromARGB(255, 200, 200, 200),
-//   );
-// }
-
 extension AppThemeEx on AppTheme {
-  CupertinoThemeData get toCupertinoThemeData {
+  ThemeData get toThemeData {
     switch (this) {
       case (AppTheme.greenLight):
-        return CupertinoThemeData(
+        return _getThemeData(
           brightness: Brightness.light,
-          primaryColor: Colors.green,
-          barBackgroundColor: Brightness.light.barBackgroundColor,
-          scaffoldBackgroundColor: Brightness.light.scaffoldBackgroundColor,
+          primarySwatch: Colors.green,
         );
       case (AppTheme.greenDark):
-        return CupertinoThemeData(
+        return _getThemeData(
           brightness: Brightness.dark,
-          primaryColor: Colors.green[700],
-          barBackgroundColor: Brightness.dark.barBackgroundColor,
-          scaffoldBackgroundColor: Brightness.dark.scaffoldBackgroundColor,
+          primarySwatch: Colors.green,
         );
       case (AppTheme.blueLight):
-        return CupertinoThemeData(
+        return _getThemeData(
           brightness: Brightness.light,
-          primaryColor: Colors.blue,
-          barBackgroundColor: Brightness.light.barBackgroundColor,
-          scaffoldBackgroundColor: Brightness.light.scaffoldBackgroundColor,
+          primarySwatch: Colors.blue,
         );
       case (AppTheme.blueDark):
-        return CupertinoThemeData(
+        return _getThemeData(
           brightness: Brightness.dark,
-          primaryColor: Colors.blue[700],
-          barBackgroundColor: Brightness.dark.barBackgroundColor,
-          scaffoldBackgroundColor: Brightness.dark.scaffoldBackgroundColor,
+          primarySwatch: Colors.blue,
         );
     }
   }
+}
+
+ThemeData _getThemeData({
+  required Brightness brightness,
+  required MaterialColor primarySwatch,
+}) {
+  return ThemeData(
+    useMaterial3: true,
+    primaryColor: primarySwatch,
+    primarySwatch: primarySwatch,
+    brightness: brightness,
+    colorScheme:
+        ColorScheme.fromSeed(seedColor: primarySwatch, brightness: brightness),
+    scaffoldBackgroundColor: brightness.scaffoldBackgroundColor,
+    appBarTheme: const AppBarTheme(elevation: 5, scrolledUnderElevation: 50),
+    navigationBarTheme: const NavigationBarThemeData(elevation: 10),
+  );
 }

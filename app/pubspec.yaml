@@ -10,9 +10,8 @@ environment:
 dependencies:
   assets:
     path: ../assets/
-  common_ui:
-    path: ../common_ui/
-  cupertino_icons: ^1.0.2
+  common_component:
+    path: ../common_component/
   equatable: ^2.0.5
   flutter:
     sdk: flutter
